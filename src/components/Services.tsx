@@ -1,4 +1,5 @@
 import { Scissors, Star, Sparkles, Package, FlaskConical } from "lucide-react";
+import BookingDialog from "./BookingDialog";
 
 const services = [
   {
@@ -69,9 +70,14 @@ const Services = () => {
                 {service.price}
               </p>
 
-              <button className="btn-outline mt-6 w-full text-xs py-2">
-                Agendar
-              </button>
+              <BookingDialog 
+                defaultService={service.title.toLowerCase() === "combos" ? "combo-cabelo-barba" : service.title.toLowerCase() === "química" ? "quimica" : service.title.toLowerCase()}
+                trigger={
+                  <button className="btn-outline mt-6 w-full text-xs py-2">
+                    Agendar
+                  </button>
+                }
+              />
             </div>
           ))}
         </div>

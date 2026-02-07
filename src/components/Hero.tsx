@@ -1,14 +1,9 @@
-import { Calendar, Clock, User } from "lucide-react";
+import { Clock, User } from "lucide-react";
 import Logo from "./Logo";
+import BookingDialog from "./BookingDialog";
 import heroImage from "@/assets/hero-barbershop.jpg";
 
 const Hero = () => {
-  const scrollToServices = () => {
-    const servicesSection = document.getElementById("servicos");
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -49,13 +44,9 @@ const Hero = () => {
           Agende seu horário on-line
         </p>
 
-        <button
-          onClick={scrollToServices}
-          className="btn-primary mt-10"
-        >
-          <Calendar className="w-5 h-5" />
-          Agendar Horário
-        </button>
+        <div className="mt-10">
+          <BookingDialog />
+        </div>
       </div>
 
       {/* Scroll indicator */}
